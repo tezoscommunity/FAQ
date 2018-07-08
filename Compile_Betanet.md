@@ -4,18 +4,19 @@
 
 These directions are for a quick build of a betanet server. Nothing is done here to harden the security of the server. Since the tezos code is complex and communicating with potentially malicious peers, consider that anything on the server could be exposed or exploited.
 
-This procedure is thoroughly tested on Debian 9.4.  It is reported to work on Ubuntu 18.04 and 16.04 as well; look for special notes below though.  It also works on MacOS 10.13.5 if you skip directly to the step for installing opam.
+This procedure is thoroughly tested on **Debian** 9.4.  It is reported to work on **Ubuntu** 18.04 and 16.04 as well; look for special notes below though.  It also works on **MacOS** 10.13.5 if you skip directly to the step for installing opam.
 
 ## Steps
 
-Login to new Debian 9 system and update its base packages.
+Login to new Debian or Ubuntu system and update its base packages.
 ```
 ssh root@192.155.xxx.xxx
 apt-get update
 apt-get upgrade -y
 ```
 
-Create a user account for building and running tezos. The `tezos` is name is arbitray; pick your favorite. Just don't build and run services as root.
+Create a user account for building and running tezos. The `tezos` is name is arbitrary; pick your favorite -- just don't build and run services as root.
+
 ```
 adduser tezos
 adduser tezos sudo
