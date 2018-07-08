@@ -23,12 +23,18 @@ adduser tezos sudo
 su - tezos
 ```
 
-If you are on Ubuntu 16, do this to be able to install bubblewrap and latest version of git. Everyone else, ignore this.
+If you are on **Ubuntu 16**, do this to be able to install bubblewrap and latest version of git. Everyone else, ignore this.
 
 ```
 sudo add-apt-repository ppa:ansible/bubblewrap
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
+```
+
+Similarly, if you are on **Debian 9**, do this to upgrade git to version 2.18.0. 
+
+```
+sudo apt-get -t stretch-backports install git
 ```
 
 Install the system packages needed to start building tezos binaries.  The actual build scripts will install more packages.
@@ -37,7 +43,7 @@ Install the system packages needed to start building tezos binaries.  The actual
 sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl
 ```
 
-(If you're on a Mac, you can start here.)
+(If you're on **MacOS**, you can start here.)
 
 Install OPAM utility needed to build the OCaml code. Version 2.0.0~rc3 of opam is required. See https://opam.ocaml.org/blog/opam-2-0-0-rc3/ for alternative installation steps.
 
@@ -71,7 +77,7 @@ git clone -b betanet https://gitlab.com/tezos/tezos.git
 cd tezos
 ```
 
-Install OCaml dependencies (and some system package dependencies too). If prompted about installing the `depext` package, agree. If this fails, see the Workaround section below. An error message about "No repository tezos found" is normal when running this step for the first time; you can ignore that error.
+Install OCaml dependencies (and some system package dependencies too). If prompted about installing the `depext` package, agree. If this fails, see the Workaround section below. An error message about "No repository tezos found" is normal when running this step for the first time; you can ignore that error. If you see an error like "Could not update repository "tezos": Commit found, but unreachable: enable uploadpack.allowReachableSHA1InWant on server" then you need to start over and install a newer version of git. See above about upgrading git in Ubuntu 16 and Debian 9.
 ```
 make build-deps
 ```
