@@ -6,6 +6,8 @@ These directions are for a quick build of a betanet server. Nothing is done here
 
 This procedure is thoroughly tested on **Debian** 9.4.  It is reported to work on **Ubuntu** 18.04 and 16.04 as well; look for special notes below though.  It also works on **MacOS** 10.13.5 if you skip directly to the step for installing opam.
 
+These steps are reported to work on **Raspberry Pi** 3B and 3B+ running Ubuntu 18.04 as well. An external hard drive is required.
+
 ## Steps
 
 Login to new Debian or Ubuntu system and update its base packages.
