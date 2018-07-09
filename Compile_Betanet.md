@@ -33,7 +33,7 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 ```
 
-Similarly, if you are on **Debian 9**, do this to upgrade git to version 2.18.0. 
+Similarly, if you are on **Debian 9**, do this to upgrade git to version 2.18.0.  You need the debian "stretch-backports" source enabled to do this. If the following command fails, see the "Add backports to your sources.list" section at https://backports.debian.org/Instructions/ and follow the steps there; then try this again.
 
 ```
 sudo apt-get -t stretch-backports install git
