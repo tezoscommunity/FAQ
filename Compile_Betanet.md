@@ -45,6 +45,11 @@ Install the system packages needed to start building tezos binaries.  The actual
 sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl
 ```
 
+If you are building on **Raspberry Pi** you may need to install another package for opam to be able to build the conf-hidapi package:
+```
+sudo apt-get install libhidapi-dev
+```
+
 (If you're on **MacOS**, you can start here.)
 
 Install OPAM utility needed to build the OCaml code. Version 2.0.0~rc3 of opam is required. See https://opam.ocaml.org/blog/opam-2-0-0-rc3/ for alternative installation steps.
