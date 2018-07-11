@@ -72,7 +72,7 @@ sudo chmod a+x /usr/local/bin/opam
 Now that opam is installed, initialize it.  When the following runs, allow it to update your .profile and, if asked, also allow to "add a hook to opam's init scripts". The init step will take quite a while to complete -- might be a good time to call your Mom, or someone else who deserves it.
 
 ```
-opam init
+opam init --compiler=4.06.1
 eval $(opam env)
 ```
 
