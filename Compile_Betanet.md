@@ -107,11 +107,12 @@ Run the node. (I also like to run the node inside a `screen(1)` session (without
 nohup ./tezos-node run --rpc-addr 127.0.0.1:8732 --connections 10 &
 ```
 
-The node will take a while to sync, bringing in the blockchain data from the peers. To see its progress you can run the following command which shows the head block known so far:
+The node will take a while to sync, bringing in the blockchain data from the peers. To see its progress you can run the following command which shows the head block known so far and will exit when the node is fully synced:
 
 ```
-./tezos-client rpc get /chains/main/blocks/head
+./tezos-client bootstrapped
 ```
+
 
 Look for the `timestamp` value in the output from that. When that value gets to within a minute or so of the current date and time then your node is synced. The expected network/chain_id value is `NetXdQprcVkpaWU`.
 
