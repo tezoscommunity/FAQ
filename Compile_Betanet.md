@@ -69,6 +69,14 @@ sudo mv opam-2.0.0-rc3-x86_64-linux /usr/local/bin/opam
 sudo chmod a+x /usr/local/bin/opam
 ```
 
+### Opam installation method (Mac OS):
+```
+wget https://github.com/ocaml/opam/releases/download/2.0.0-rc3/opam-2.0.0-rc3-x86_64-darwin
+sudo mv opam-2.0.0-rc3-x86_64-darwin /usr/local/bin/opam
+sudo chmod a+x /usr/local/bin/opam
+echo "0e7204eb98e66f594d33814051247d95fc9309a61b418d0a5c15468efcdf5501  /usr/local/bin/opam"|shasum -a 256 -c
+```
+
 Now that opam is installed, initialize it.  When the following runs, allow it to update your .profile and, if asked, also allow to "add a hook to opam's init scripts". The init step will take quite a while to complete -- might be a good time to call your Mom, or someone else who deserves it.
 
 ```
