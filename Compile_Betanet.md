@@ -42,7 +42,7 @@ sudo apt-get -t stretch-backports install git
 Install the system packages needed to start building tezos binaries.  The actual build scripts will install more packages.
 
 ```
-sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl
+sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2
 ```
 
 If you are building on **Raspberry Pi** you may need to install another package for opam to be able to build the conf-hidapi package:
@@ -67,6 +67,14 @@ sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.
 wget https://github.com/ocaml/opam/releases/download/2.0.0-rc3/opam-2.0.0-rc3-x86_64-linux
 sudo mv opam-2.0.0-rc3-x86_64-linux /usr/local/bin/opam
 sudo chmod a+x /usr/local/bin/opam
+```
+
+### Opam installation method (Mac OS):
+```
+wget https://github.com/ocaml/opam/releases/download/2.0.0-rc3/opam-2.0.0-rc3-x86_64-darwin
+sudo mv opam-2.0.0-rc3-x86_64-darwin /usr/local/bin/opam
+sudo chmod a+x /usr/local/bin/opam
+echo "0e7204eb98e66f594d33814051247d95fc9309a61b418d0a5c15468efcdf5501  /usr/local/bin/opam"|shasum -a 256 -c
 ```
 
 Now that opam is installed, initialize it.  When the following runs, allow it to update your .profile and, if asked, also allow to "add a hook to opam's init scripts". The init step will take quite a while to complete -- might be a good time to call your Mom, or someone else who deserves it.
