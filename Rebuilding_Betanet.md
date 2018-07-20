@@ -2,6 +2,8 @@ To upgrade a Tezos betanet server to newly released code it is possible to build
 
 But to save time it is also possible to upgrade in place. Here is what I did:
 
+# Re-compiling Betanet without a full rebuild
+
 Copy the entire Tezos build tree to a new place. That way we leave the current one around as a backup.
 Also, the currently running binaries are not disturbed. This assumes that `~/tezos` is the current build directory.
 You could ignore this and work right in the original build directory if you don't care about such a backup.
@@ -32,3 +34,9 @@ git fetch
 git pull
 make
 ```
+
+# Notes
+
+Several old binaries are gone:  tezos-alpha-baker, tezos-alpha-endoser, and tezos-alpha-accuser. Each now has a pair of replacements, one for the first protocol and one for the new second protocol: tezos-accuser-001-PtCJ7pwo, tezos-baker-001-PtCJ7pwo, tezos-endorser-001-PtCJ7pwo, tezos-accuser-002-PsYLVpVv, tezos-baker-002-PsYLVpVv, tezos-endorser-002-PsYLVpVv.
+
+The new binaries make use of the same node and client state data as before, in ~/.tezos-node and ~/.tezos-client (by default).
