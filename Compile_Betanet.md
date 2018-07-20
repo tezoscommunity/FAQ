@@ -147,6 +147,8 @@ Also: if your goal is only to activate your Tezos account and claim the tez from
 
 See http://doc.tzalpha.net/introduction/zeronet.html.
 
+Also see [the Tezos baking howto](https://gist.github.com/dakk/bdf6efe42ae920acc660b20080a506dd) by @dakk.
+
 ## Workarounds when things won't build or run
 
 In the top code directory, ~/tezos, run `eval $(opam env)`. Then try again.
@@ -180,6 +182,7 @@ If you get 0 connections, verify that your node identity was built with sufficie
 ## Rebuilding
 
 To rebuild with the latest beta code you can move or remove the "tezos" directory and start again from the `git clone` step. As an alternative you can update in place as follows.
+(Or see a more thorough and slightly different approach at [Rebuilding Betanet](https://github.com/tezoscommunity/FAQ/blob/master/Rebuilding_Betanet.md)).
 
 ```
 git fetch
