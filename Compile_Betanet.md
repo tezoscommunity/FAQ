@@ -14,7 +14,7 @@ Login to new Debian or Ubuntu system and update its base packages.
 ```
 ssh root@192.155.xxx.xxx
 apt-get update
-apt-get upgrade -y
+apt-get dist-upgrade -y
 ```
 
 Create a user account for building and running tezos. The `tezos` is name is arbitrary; pick your favorite -- just don't build and run services as root.
@@ -22,7 +22,8 @@ Create a user account for building and running tezos. The `tezos` is name is arb
 ```
 adduser tezos
 adduser tezos sudo
-su - tezos
+reboot
+ssh tezos@192.155.xxx.xxx
 ```
 
 If you are on **Ubuntu 16**, do this to be able to install bubblewrap and latest version of git. Everyone else, ignore this.
@@ -57,6 +58,7 @@ Install OPAM utility needed to build the OCaml code. Version 2.0.0~rc3 of opam i
 ### Opam installation method 1:
 
 If asked, just accept the default of installing to /usr/local/bin.
+Installing there depends on the 'tezos' user having sudo rights as we arranged above.
 
 ```
 sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
