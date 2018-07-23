@@ -169,7 +169,7 @@ The `make build-deps` step pins many packages to particular versions. If you wan
 opam pin list -s | xargs opam pin remove
 ```
 
-If you encounter an error about the opam depext plugin not being installed, you can install it manually and try again. Also, it seems that the system `rsync` package it needed for opam to be able install depext. Do `apt-get install rsync` if necessary and try again.
+If you encounter an error about the opam depext plugin not being installed, you can install it manually and try again. Also, it seems that the system `rsync` package it needed for opam to be able install depext. Do `sudo apt-get install rsync` if necessary and try again.
 
 ```
 opam install depext
