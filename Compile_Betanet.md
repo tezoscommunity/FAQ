@@ -10,7 +10,8 @@ These steps are reported to work on **Raspberry Pi** 3B and 3B+ running Ubuntu 1
 
 ## Steps
 
-Login to new Debian or Ubuntu system and update its base packages.
+Login to new Debian or Ubuntu system and update its base packages.  (In the following, replace "192.155.xxx.xxx" with the actual IP address of your server).
+
 ```
 ssh root@192.155.xxx.xxx
 apt-get update
