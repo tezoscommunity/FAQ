@@ -18,7 +18,7 @@ apt-get update
 apt-get dist-upgrade -y
 ```
 
-Create a user account for building and running tezos. The `tezos` is name is arbitrary; pick your favorite -- just don't build and run services as root.
+Create a user account for building and running tezos. The `tezos` is name is arbitrary; pick your favorite -- just don't build and run services as root. If you already have a user account you can use that instead. Note that the `make build-deps` step requires sudo rights when it first runs, to install some system packages via apt-get.
 
 ```
 adduser tezos
@@ -86,6 +86,8 @@ Now that opam is installed, initialize it.  When the following runs, allow it to
 opam init --compiler=4.06.1
 eval $(opam env)
 ```
+
+If you are running in the **Windows 10 Linux Subsystem** you may need to add `--disable-sandboxing` to the call to `opam init` above. Otherwise you may be blocked by `brwap` errors as bubblewrap does not currently work in that environment.
 
 Note that the `make build-deps` step below builds a local opam environment within the build directory, so we no longer need to set up a switch as we did before.
 
