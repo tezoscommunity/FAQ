@@ -44,7 +44,7 @@ sudo apt-get -t stretch-backports install git
 Install the system packages needed to start building tezos binaries.  The actual build scripts will install more packages.
 
 ```
-sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2 rsync
+sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2 rsync libev-dev libgmp-dev pkg-config
 ```
 
 If you are building on **Raspberry Pi** you may need to install another package for opam to be able to build the conf-hidapi package:
