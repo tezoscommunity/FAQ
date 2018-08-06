@@ -44,7 +44,7 @@ sudo apt-get -t stretch-backports install git
 Install the system packages needed to start building tezos binaries.  The actual build scripts will install more packages.
 
 ```
-sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2 rsync
+sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2 rsync libev-dev libgmp-dev pkg-config
 ```
 
 If you are building on **Raspberry Pi** you may need to install another package for opam to be able to build the conf-hidapi package:
@@ -54,7 +54,7 @@ sudo apt-get install libhidapi-dev
 
 (If you're on **MacOS**, you can start here.)
 
-Install OPAM utility needed to build the OCaml code. Version 2.0.0~rc3 of opam is required. See https://opam.ocaml.org/blog/opam-2-0-0-rc3/ for alternative installation steps.
+Install OPAM utility needed to build the OCaml code. Version 2.0.0~rc4 of opam is required. See https://opam.ocaml.org/blog/opam-2-0-0-rc4/ for alternative installation steps.
 
 ### Opam installation method 1:
 
@@ -67,8 +67,8 @@ sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.
 
 ### Opam installation method 2:
 ```
-wget https://github.com/ocaml/opam/releases/download/2.0.0-rc3/opam-2.0.0-rc3-x86_64-linux
-sudo mv opam-2.0.0-rc3-x86_64-linux /usr/local/bin/opam
+wget https://github.com/ocaml/opam/releases/download/2.0.0-rc4/opam-2.0.0-rc4-x86_64-linux
+sudo mv opam-2.0.0-rc4-x86_64-linux /usr/local/bin/opam
 sudo chmod a+x /usr/local/bin/opam
 ```
 
