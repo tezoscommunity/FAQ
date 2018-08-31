@@ -8,6 +8,10 @@ This procedure is thoroughly tested on **Debian** 9.4.  It is reported to work o
 
 These steps are reported to work on **Raspberry Pi** 3B and 3B+ running Ubuntu 18.04 as well. An external hard drive is required.
 
+### Changelog
+
+2018-08-31:  Added libhidapi-dev as a system package dependency.
+
 ## Steps
 
 Login to new Debian or Ubuntu system and update its base packages.  (In the following, replace "192.155.xxx.xxx" with the actual IP address of your server).
@@ -44,7 +48,7 @@ sudo apt-get -t stretch-backports install git
 Install the system packages needed to start building tezos binaries.  The actual build scripts will install more packages.
 
 ```
-sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2 rsync libev-dev libgmp-dev pkg-config
+sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2 rsync libev-dev libgmp-dev pkg-config libhidapi-dev
 ```
 
 If you are building on **Raspberry Pi** you may need to install another package for opam to be able to build the conf-hidapi package:
