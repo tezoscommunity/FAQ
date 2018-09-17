@@ -150,7 +150,7 @@ Note: you can also import your private key info, but that is not necessary in or
 
 Also: if your goal is only to activate your Tezos account and claim the tez from the fundraiser, it’s much easier to just use stephenandrews online utility at https://stephenandrews.github.io/activatez/ .
 
-## Baking on betanet
+## Baking on Mainnet
 
 See [the Tezos baking howto](https://gist.github.com/dakk/bdf6efe42ae920acc660b20080a506dd) by @dakk.
 
