@@ -186,8 +186,7 @@ If you get 0 connections, verify that your node identity was built with sufficie
 
 ## Rebuilding
 
-To rebuild with the latest beta code you can move or remove the "tezos" directory and start again from the `git clone` step. As an alternative you can update in place as follows.
-(Or see a more thorough and slightly different approach at [Rebuilding Mainnet](https://github.com/tezoscommunity/FAQ/blob/master/Rebuilding_Betanet.md)).
+To rebuild with the latest Mainnet code you can move or remove the "tezos" directory and start again from the `git clone` step. As an alternative you can update in place as follows.
 
 ```
 git fetch
