@@ -1,8 +1,8 @@
-To upgrade a Tezos betanet server to newly released code it is possible to build from scratch as always.
+To upgrade a Tezos Mainnet server to newly released code it is possible to build from scratch as always.
 
 But to save time it is also possible to upgrade in place. Here is what I did:
 
-# Re-compiling Betanet without a full rebuild
+# Re-compiling Mainnnet without a full rebuild
 
 Copy the entire Tezos build tree to a new place. That way we leave the current one around as a backup.
 Also, the currently running binaries are not disturbed. This assumes that `~/tezos` is the current build directory.
@@ -27,7 +27,7 @@ make clean
 git clean -f
 ```
 
-Get the new code and build it. This assumes that we are on the 'betanet' branch already.  Do `git checkout betanet` first if not.
+Get the new code and build it. This assumes that we are on the 'mainnet' branch already.  Do `git checkout mainnet` first if not.
 
 ```
 git fetch
