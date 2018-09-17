@@ -1,8 +1,8 @@
-# Build a Betanet node for Debian, Ubuntu, or MacOS
+# Build a Mainnet node for Debian, Ubuntu, or MacOS
 
 ## Notice
 
-These directions are for a quick build of a betanet server. Nothing is done here to harden the security of the server. Since the tezos code is complex and communicating with potentially malicious peers, consider that anything on the server could be exposed or exploited.
+These directions are for a quick build of a mainnnet server. Nothing is done here to harden the security of the server. Since the tezos code is complex and communicating with potentially malicious peers, consider that anything on the server could be exposed or exploited.
 
 This procedure is thoroughly tested on **Debian** 9.4.  It is reported to work on **Ubuntu** 18.04 and 16.04 as well; look for special notes below though.  It also works on **MacOS** 10.13.5 if you skip directly to the step for installing opam.
 
@@ -95,9 +95,9 @@ If you are running in the **Windows 10 Linux Subsystem** you may need to add `--
 
 Note that the `make build-deps` step below builds a local opam environment within the build directory, so we no longer need to set up a switch as we did before.
 
-Get the betanet source code.
+Get the mainnnet source code.
 ```
-git clone -b betanet https://gitlab.com/tezos/tezos.git
+git clone -b mainnnet https://gitlab.com/tezos/tezos.git
 cd tezos
 ```
 
@@ -112,7 +112,7 @@ eval $(opam env)
 make
 ```
 
-Configure the node identity. In the betanet the "difficulty" used in generating the node identity must be at least 26. That is the default now in the `identity generate` command.
+Configure the node identity. In the mainnnet the "difficulty" used in generating the node identity must be at least 26. That is the default now in the `identity generate` command.
 
 ```
 ./tezos-node identity generate 26.
@@ -150,13 +150,9 @@ Note: you can also import your private key info, but that is not necessary in or
 
 Also: if your goal is only to activate your Tezos account and claim the tez from the fundraiser, it’s much easier to just use stephenandrews online utility at https://stephenandrews.github.io/activatez/ .
 
-## Baking in betanet
+## Baking on betanet
 
-[TBD: this section is incomplete]
-
-See http://doc.tzalpha.net/introduction/zeronet.html.
-
-Also see [the Tezos baking howto](https://gist.github.com/dakk/bdf6efe42ae920acc660b20080a506dd) by @dakk.
+See [the Tezos baking howto](https://gist.github.com/dakk/bdf6efe42ae920acc660b20080a506dd) by @dakk.
 
 ## Workarounds when things won't build or run
 
@@ -195,7 +191,7 @@ To rebuild with the latest beta code you can move or remove the "tezos" director
 
 ```
 git fetch
-git reset --hard origin/betanet
+git reset --hard origin/mainnnet
 git clean -dxf
 eval $(opam env)
 make build-deps
@@ -206,7 +202,7 @@ make
 
 Baking info: https://gist.github.com/dakk/bdf6efe42ae920acc660b20080a506dd 
 
-Docker images: https://hub.docker.com/r/tezos/tezos/tags/
+Docker images: https://gitlab.com/tezos/tezos/blob/mainnet/docs/introduction/howtoget.rst
 
 Docker script: https://gitlab.com/tezos/tezos/raw/betanet/scripts/alphanet.sh
 Copy to betanet.sh and run as usual.
