@@ -197,6 +197,8 @@ make build-deps
 make
 ```
 
+Details here:https://github.com/Blindripper/FAQ/blob/patch-1/Rebuilding_Mainnet.md
+
 ## References
 
 Baking info: https://gist.github.com/dakk/bdf6efe42ae920acc660b20080a506dd 
