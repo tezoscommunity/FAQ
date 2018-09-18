@@ -2,7 +2,7 @@
 
 ## Notice
 
-These directions are for a quick build of a mainnnet server. Nothing is done here to harden the security of the server. Since the tezos code is complex and communicating with potentially malicious peers, consider that anything on the server could be exposed or exploited.
+These directions are for a quick build of a mainnet server. Nothing is done here to harden the security of the server. Since the tezos code is complex and communicating with potentially malicious peers, consider that anything on the server could be exposed or exploited.
 
 This procedure is thoroughly tested on **Debian** 9.4.  It is reported to work on **Ubuntu** 18.04 and 16.04 as well; look for special notes below though.  It also works on **MacOS** 10.13.5 if you skip directly to the step for installing opam.
 
@@ -95,9 +95,9 @@ If you are running in the **Windows 10 Linux Subsystem** you may need to add `--
 
 Note that the `make build-deps` step below builds a local opam environment within the build directory, so we no longer need to set up a switch as we did before.
 
-Get the mainnnet source code.
+Get the mainnet source code.
 ```
-git clone -b mainnnet https://gitlab.com/tezos/tezos.git
+git clone -b mainnet https://gitlab.com/tezos/tezos.git
 cd tezos
 ```
 
@@ -112,7 +112,7 @@ eval $(opam env)
 make
 ```
 
-Configure the node identity. In the mainnnet the "difficulty" used in generating the node identity must be at least 26. That is the default now in the `identity generate` command.
+Configure the node identity. In the mainnet the "difficulty" used in generating the node identity must be at least 26. That is the default now in the `identity generate` command.
 
 ```
 ./tezos-node identity generate 26.
@@ -190,7 +190,7 @@ To rebuild with the latest Mainnet code you can move or remove the "tezos" direc
 
 ```
 git fetch
-git reset --hard origin/mainnnet
+git reset --hard origin/mainnet
 git clean -dxf
 eval $(opam env)
 make build-deps
