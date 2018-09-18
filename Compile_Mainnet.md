@@ -45,6 +45,14 @@ Similarly, if you are on **Debian 9**, do this to upgrade git to version 2.18.0.
 sudo apt-get -t stretch-backports install git
 ```
 
+If you are on **Centos 7.5** some of the system package names are different. Use this instead of the `apt-get` just below:
+
+```
+sudo yum install epel-release
+sudo yum install bzip2 screen wget rsync gcc m4 make unzip patch libev-devel libev hidapi-devel gmp-devel bubblewrap git
+```
+
+
 Install the system packages needed to start building tezos binaries.  The actual build scripts will install more packages.
 
 ```
