@@ -2,7 +2,7 @@ To upgrade a Tezos Mainnet server to newly released code it is possible to build
 
 But to save time it is also possible to upgrade in place. Here is what I did:
 
-# Re-compiling Mainnnet without a full rebuild
+# Re-compiling Mainnet without a full rebuild
 
 Copy the entire Tezos build tree to a new place. That way we leave the current one around as a backup.
 Also, the currently running binaries are not disturbed. This assumes that `~/tezos` is the current build directory.
