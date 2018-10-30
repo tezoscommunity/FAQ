@@ -63,28 +63,19 @@ sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl b
 
 Install OPAM utility needed to build the OCaml code. Version 2.0.0~rc4 of opam is required. See https://opam.ocaml.org/blog/opam-2-0-0-rc4/ for alternative installation steps.
 
-### Opam installation method 1:
-
-If asked, just accept the default of installing to /usr/local/bin.
-Installing there depends on the 'tezos' user having sudo rights as we arranged above.
-
-```
-sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
-```
-
 ### Opam installation method 2:
 ```
-wget https://github.com/ocaml/opam/releases/download/2.0.0-rc4/opam-2.0.0-rc4-x86_64-linux
-sudo mv opam-2.0.0-rc4-x86_64-linux /usr/local/bin/opam
+wget https://github.com/ocaml/opam/releases/download/2.0.0/opam-2.0.0-x86_64-linux
+sudo mv opam-2.0.0-x86_64-linux /usr/local/bin/opam
 sudo chmod a+x /usr/local/bin/opam
 ```
 
 ### Opam installation method (Mac OS):
 ```
-wget https://github.com/ocaml/opam/releases/download/2.0.0-rc3/opam-2.0.0-rc3-x86_64-darwin
-sudo mv opam-2.0.0-rc3-x86_64-darwin /usr/local/bin/opam
+wget https://github.com/ocaml/opam/releases/download/2.0.0/opam-2.0.0-x86_64-darwin
+sudo mv opam-2.0.0-x86_64-darwin /usr/local/bin/opam
 sudo chmod a+x /usr/local/bin/opam
-echo "0e7204eb98e66f594d33814051247d95fc9309a61b418d0a5c15468efcdf5501  /usr/local/bin/opam"|shasum -a 256 -c
+echo "f25a98ff5a45bd2ad7ce1b9496503c505ca8cd38525dcd11be04b9203e54cbff  /usr/local/bin/opam"|shasum -a 256 -c
 ```
 
 Now that opam is installed, initialize it.  When the following runs, allow it to update your .profile and, if asked, also allow to "add a hook to opam's init scripts". The init step will take quite a while to complete -- might be a good time to call your Mom, or someone else who deserves it.
