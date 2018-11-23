@@ -78,10 +78,10 @@ sudo chmod a+x /usr/local/bin/opam
 echo "f25a98ff5a45bd2ad7ce1b9496503c505ca8cd38525dcd11be04b9203e54cbff  /usr/local/bin/opam"|shasum -a 256 -c
 ```
 
-Now that opam is installed, initialize it.  When the following runs, allow it to update your .profile and, if asked, also allow to "add a hook to opam's init scripts". The init step will take quite a while to complete -- might be a good time to call your Mom, or someone else who deserves it.
+Now that opam is installed, initialize it.  When the following runs, allow it to update your .profile and, if asked, also allow to "add a hook to opam's init scripts".
 
 ```
-opam init --compiler=4.06.1
+opam init --bare
 eval $(opam env)
 ```
 
@@ -100,7 +100,7 @@ Install OCaml dependencies (and some system package dependencies too). If prompt
 make build-deps
 ```
 
-Compile the binaries. Since the build-deps step above created an _opam directory with an opam switch for tezos, update the environment again before compiling to be sure we've got the right opam configuration.
+Compile the binaries. Since the build-deps step above created an \_opam directory with an opam switch for tezos, update the environment again before compiling to be sure we've got the right opam configuration.
 ```
 eval $(opam env)
 make
@@ -115,7 +115,7 @@ Configure the node identity. In the mainnet the "difficulty" used in generating 
 Run the node. (I also like to run the node inside a `screen(1)` session (without `nohup` or `&`) so that the process persists in the foreground and I can detach and come back to it later in another ssh session.)\
 
 ```
-nohup ./tezos-node run --rpc-addr 127.0.0.1:8732 --connections 10 &
+nohup ./tezos-node run --rpc-addr 127.0.0.1:8732 &
 ```
 
 The node will take a while to sync, bringing in the blockchain data from the peers. To see its progress you can run the following command which shows the head block known so far and will exit when the node is fully synced:
@@ -124,8 +124,21 @@ The node will take a while to sync, bringing in the blockchain data from the pee
 ./tezos-client bootstrapped
 ```
 
-
 Look for the `timestamp` value in the output from that. When that value gets to within a minute or so of the current date and time then your node is synced. The expected network/chain_id value is `NetXdQprcVkpaWU`.
+
+### Faster bootstrap
+
+It's possible to start up your node with a copy of the chain data that is (typically) just a few days old.  See the directions at https://www.tzdutch.com/quicksync/
+
+TL;DR
+Install the lz4 system package, then stop the node and do:
+```
+cd ~/.tezos-node
+mkdir old
+mv content store old
+curl http://quicksync.tzdutch.com/latest.tar.lz4 | lz4 -d | tar xf -
+```
+Then start tezos-node again as usual and it will sync the rest of the chain.
 
 ## To activate a donation account
 
