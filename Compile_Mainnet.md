@@ -200,6 +200,61 @@ If you get 0 connections, verify that your node identity was built with sufficie
 ./tezos-node identity check
 ```
 
+### Fix issue in macOS
+On macOS `make build-deps` sometimes fails since it cannot build OCaml compiler. You may get the following error
+```bash
+<><> Gathering sources ><><><><><><><><><><><><><><><><><><><><><><><><><><>  🐫
+[ocaml-base-compiler.4.08.1] found in cache
+
+<><> Processing actions <><><><><><><><><><><><><><><><><><><><><><><><><><>  🐫
+[ERROR] The compilation of ocaml-base-compiler failed at
+        "/Users/ameten/.opam/opam-init/hooks/sandbox.sh build ./configure
+        --prefix=/Users/ameten/.opam/4.08.1 CC=cc ASPP=cc -c".
+∗ installed base-bigarray.base
+∗ installed base-threads.base
+∗ installed base-unix.base
+
+#=== ERROR while compiling ocaml-base-compiler.4.08.1 =========================#
+# context     2.0.5 | macos/x86_64 |  | https://opam.ocaml.org#b679cc38
+# path        ~/.opam/4.08.1/.opam-switch/build/ocaml-base-compiler.4.08.1
+# command     ~/.opam/opam-init/hooks/sandbox.sh build ./configure --prefix=/Users/ameten/.opam/4.08.1 CC=cc ASPP=cc -c
+# exit-code   65
+# env-file    ~/.opam/log/ocaml-base-compiler-5420-ffb3fd.env
+# output-file ~/.opam/log/ocaml-base-compiler-5420-ffb3fd.out
+### output ###
+# /Users/ameten/.opam/opam-init/hooks/sandbox.sh: line 9: cd: /Users/ameten/.ccache: No such file or directory
+# sandbox-exec: empty subpath pattern
+
+
+
+<><> Error report <><><><><><><><><><><><><><><><><><><><><><><><><><><><><>  🐫
+┌─ The following actions failed
+│ λ build ocaml-base-compiler 4.08.1
+└─
+┌─ The following changes have been performed (the rest was aborted)
+│ ∗ install base-bigarray base
+│ ∗ install base-threads  base
+│ ∗ install base-unix     base
+└─
+# Run eval $(opam env) to update the current shell environment
+Switch initialisation failed: clean up? ('n' will leave the switch partially
+installed) [Y/n] Y
+```     
+Sandbox executable complains that there is not place to store compiler cache. You don't have `/Users/username/.ccache` on your system.
+Install `ccache` using your favourite package manager. Command for Homebrew:
+```bash
+brew install ccache
+```
+If `ccache` is installed, but you don't have `/Users/username/.ccache`, run the following command to create the directory:
+```bash
+ccache -C
+```
+When you have `/Users/username/.ccache` you should be able to install OCaml compiler using `opam`.
+```bash
+opam switch create 4.08.1
+```
+Once you have OCaml compiler in `opam`, you should be able to run `make build-deps` although it will install its own OCaml compiler.
+
 ## Rebuilding
 
 To rebuild with the latest Mainnet code you can move or remove the "tezos" directory and start again from the `git clone` step. As an alternative you can update in place as follows.
