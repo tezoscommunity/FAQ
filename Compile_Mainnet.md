@@ -144,7 +144,7 @@ Install the lz4 system package, then stop the node and do:
 ```
 cd ~/.tezos-node
 mkdir old
-mv content store old
+mv context store old
 curl http://quicksync.tzdutch.com/latest.tar.lz4 | lz4 -d | tar xf -
 ```
 Then start tezos-node again as usual and it will sync the rest of the chain.
