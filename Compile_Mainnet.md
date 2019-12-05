@@ -137,17 +137,8 @@ Look for the `timestamp` value in the output from that. When that value gets to 
 
 ### Faster bootstrap
 
-It's possible to start up your node with a copy of the chain data that is (typically) just a few days old.  See the directions at https://www.tzdutch.com/quicksync/
-
-TL;DR
-Install the lz4 system package, then stop the node and do:
-```
-cd ~/.tezos-node
-mkdir old
-mv context store old
-curl http://quicksync.tzdutch.com/latest.tar.lz4 | lz4 -d | tar xf -
-```
-Then start tezos-node again as usual and it will sync the rest of the chain.
+It's possible to start up your node with a copy of the chain data that is (typically) just a few days old.
+See the directions at https://tezosshots.com/.
 
 ## To activate a donation account
 
