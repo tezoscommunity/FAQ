@@ -10,7 +10,8 @@ These steps are reported to work on **Raspberry Pi** 3B and 3B+ running Ubuntu 1
 
 ### Changelog
 
-2018-08-31:  Added libhidapi-dev as a system package dependency.
++ 2020-01-13:  Make Opam installation directions more general, allowing for Opam 2.0.5
++ 2018-08-31:  Added libhidapi-dev as a system package dependency.
 
 ## Steps
 
@@ -64,7 +65,7 @@ sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl b
 Install OPAM utility needed to build the OCaml code. Version 2.0.0 or later of opam is required.
 See https://opam.ocaml.org/doc/Install.html for alternative installation steps.
 
-### Opam installation method 1:
+### Opam installation:
 
 If asked, just accept the default of installing to /usr/local/bin.
 Installing there depends on the 'tezos' user having sudo rights as we arranged above.
@@ -72,22 +73,15 @@ Installing there depends on the 'tezos' user having sudo rights as we arranged a
 sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
 ```
 
-### Opam installation method 2:
-```
-wget https://github.com/ocaml/opam/releases/download/2.0.0/opam-2.0.0-x86_64-linux
-sudo mv opam-2.0.0-x86_64-linux /usr/local/bin/opam
-sudo chmod a+x /usr/local/bin/opam
-```
+### Opam installation, alternative manual method for MacOS and other:
 
-### Opam installation method (Mac OS):
-```
-wget https://github.com/ocaml/opam/releases/download/2.0.0/opam-2.0.0-x86_64-darwin
-sudo mv opam-2.0.0-x86_64-darwin /usr/local/bin/opam
-sudo chmod a+x /usr/local/bin/opam
-echo "f25a98ff5a45bd2ad7ce1b9496503c505ca8cd38525dcd11be04b9203e54cbff  /usr/local/bin/opam"|shasum -a 256 -c
-```
+Visit https://github.com/ocaml/opam/releases/.
+Find the newest stable 2.0.x release (2.0.5 works at the time of writing, January 2020) and download the binary executable for your architecture.
+Move that executable file to /usr/local/bin/opam and use `chmod a+x` to make it executable.
 
-Now that opam is installed, initialize it.  When the following runs, allow it to update your .profile and, if asked, also allow to "add a hook to opam's init scripts".
+### Opam setup
+
+Now that opam is installed, initialize it. (Allow it to update .profile, etc, at your own discretion).
 
 ```
 opam init --bare
