@@ -98,7 +98,7 @@ git clone -b mainnet https://gitlab.com/tezos/tezos.git
 cd tezos
 ```
 
-Install OCaml dependencies (and some system package dependencies too). If prompted about installing the `depext` package, agree. If this fails, see the Workaround section below. An error message about "No repository tezos found" is normal when running this step for the first time; you can ignore that error. If you see an error like "Could not update repository "tezos": Commit found, but unreachable: enable uploadpack.allowReachableSHA1InWant on server" then you need to start over and install a newer version of git. See above about upgrading git in Ubuntu 16 and Debian 9.
+Install OCaml dependencies (and some system package dependencies too). An error message about "No repository tezos found" is normal when running this step for the first time; you can ignore that error. If you see an error like "Could not update repository "tezos": Commit found, but unreachable: enable uploadpack.allowReachableSHA1InWant on server" then you need to start over and install a newer version of git. See above about upgrading git in Ubuntu 16 and Debian 9.
 ```
 make build-deps
 ```
@@ -171,12 +171,6 @@ The `make build-deps` step pins many packages to particular versions. If you wan
 
 ```
 opam pin list -s | xargs opam pin remove
-```
-
-If you encounter an error about the opam depext plugin not being installed, you can install it manually and try again. Also, it seems that the system `rsync` package it needed for opam to be able install depext. Do `sudo apt-get install rsync` if necessary and try again.
-
-```
-opam install depext
 ```
 
 If you get 0 connections, verify that your node identity was built with sufficient difficulty:
