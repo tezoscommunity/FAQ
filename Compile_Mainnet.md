@@ -53,6 +53,13 @@ sudo yum install epel-release
 sudo yum install bzip2 screen wget rsync gcc m4 make unzip patch libev-devel libev hidapi-devel gmp-devel bubblewrap git
 ```
 
+If you are on **Arch Linux/Manjaro** the above applies with `pacman`:
+
+```
+sudo pacman -Syu
+sudo pacman -S patch unzip make gcc m4 git g++ aspcud bubblewrap curl bzip2 rsync libevdev gmp pkgconf hidapi
+```
+
 
 Install the system packages needed to start building tezos binaries.  The actual build scripts will install more packages.
 
