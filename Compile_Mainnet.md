@@ -1,5 +1,10 @@
 # Build a Mainnet node for Debian, Ubuntu, or MacOS
 
+***
+***As of late 2020 these directions are obsolete.
+Please refer to http://doc.tzalpha.net/introduction/howtoget.html#build-from-sources instead.***
+***
+
 ## Notice
 
 These directions are for a quick build of a mainnet server. Nothing is done here to harden the security of the server. Since the tezos code is complex and communicating with potentially malicious peers, consider that anything on the server could be exposed or exploited.
