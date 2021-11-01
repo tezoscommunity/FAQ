@@ -74,7 +74,7 @@ sudo apt-get install -y patch unzip make gcc m4 git g++ aspcud bubblewrap curl b
 
 (If you're on **MacOS**, you can start here.)
 
-Install OPAM utility needed to build the OCaml code. Version 2.0.0 or later of opam is required.
+Install OPAM utility needed to build the OCaml code. Version 2.0.x of opam is required.
 See https://opam.ocaml.org/doc/Install.html for alternative installation steps.
 
 ### Opam installation:
@@ -82,7 +82,7 @@ See https://opam.ocaml.org/doc/Install.html for alternative installation steps.
 If asked, just accept the default of installing to /usr/local/bin.
 Installing there depends on the 'tezos' user having sudo rights as we arranged above.
  ```
-sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh) --version 2.0.5
 ```
 
 ### Opam installation, alternative manual method for MacOS and other:
